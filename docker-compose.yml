@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  services.persongenerator:
+    image: ${DOCKER_REGISTRY-}servicespersongenerator
+    build:
+      context: .
+      dockerfile: Services.PersonGenerator/Dockerfile
