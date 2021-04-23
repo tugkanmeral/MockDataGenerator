@@ -28,18 +28,19 @@ namespace Services.PersonGenerator.Business
             {
                 BirthDate = DateTime.Now.AddYears(-age),
                 Name = NameSeeds.Names[nameIndex],
-                Surname = SurnameSeeds.Surnames[surnameIndex]
+                Surname = SurnameSeeds.Surnames[surnameIndex],
+                Age = age
             };
             return person;
         }
 
         public IEnumerable<IMockData> GetMockDatas(int count)
         {
-            var people = new List<IMockData>();
+            var people = new List<Person>();
 
             for (int i = 0; i < count; i++)
             {
-                people.Add(GetMockData());
+                people.Add((Person)GetMockData());
             }
 
             return people;
