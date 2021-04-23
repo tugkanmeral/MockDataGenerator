@@ -19,9 +19,11 @@ namespace Services.Logger.MongoLogger.Controllers
         }
 
         [HttpGet]
-        public void Insert(string message)
+        public async Task<string> Insert(string message)
         {
             _logRepository.Insert(message);
+            var addedMessage = await _logRepository.Get(message);
+            return addedMessage;
         }
     }
 }

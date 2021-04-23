@@ -28,5 +28,12 @@ namespace Services.Logger.MongoLogger.Repositories
             };
             await _logCollection.InsertOneAsync(newLog);
         }
+
+        public async Task<string> Get(string message)
+        {
+            var betterFilter = Builders<Log>.Filter.Eq(l => l.Message, message); ;
+            var log = await _logCollection.Find<Log>(betterFilter).ToListAsync();
+            return log[0].Message;
+        }
     }
 }
