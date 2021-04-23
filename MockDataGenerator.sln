@@ -9,9 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{B7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PersonGenerator", "PersonGenerator", "{609634B8-A9B9-4DFD-A2CF-6148AA080BF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.PersonGenerator", "Services.PersonGenerator\Services.PersonGenerator.csproj", "{1A965522-3D83-4946-B3C1-69629CC974E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.PersonGenerator", "Services.PersonGenerator\Services.PersonGenerator.csproj", "{1A965522-3D83-4946-B3C1-69629CC974E8}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{42D19F1D-E314-4EB5-A60B-55DEDE88E6FA}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{60E01FD6-5306-4C02-9A7B-2B012CFE5CB2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logger", "Logger", "{6DC84E1B-3E9B-4270-8A81-DFB4C816D331}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MongoLogger", "MongoLogger", "{964704E5-EEAA-4AE5-852A-96B772864FF8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Logger.MongoLogger", "Services.Logger.MongoLogger\Services.Logger.MongoLogger.csproj", "{2D05B35C-6086-496C-B998-C7081A0846D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +29,14 @@ Global
 		{1A965522-3D83-4946-B3C1-69629CC974E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A965522-3D83-4946-B3C1-69629CC974E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A965522-3D83-4946-B3C1-69629CC974E8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42D19F1D-E314-4EB5-A60B-55DEDE88E6FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42D19F1D-E314-4EB5-A60B-55DEDE88E6FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42D19F1D-E314-4EB5-A60B-55DEDE88E6FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42D19F1D-E314-4EB5-A60B-55DEDE88E6FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60E01FD6-5306-4C02-9A7B-2B012CFE5CB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60E01FD6-5306-4C02-9A7B-2B012CFE5CB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60E01FD6-5306-4C02-9A7B-2B012CFE5CB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60E01FD6-5306-4C02-9A7B-2B012CFE5CB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D05B35C-6086-496C-B998-C7081A0846D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D05B35C-6086-496C-B998-C7081A0846D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D05B35C-6086-496C-B998-C7081A0846D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D05B35C-6086-496C-B998-C7081A0846D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,6 +44,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{609634B8-A9B9-4DFD-A2CF-6148AA080BF6} = {B758FB1C-FDB0-4B4E-91A7-520CF812B07D}
 		{1A965522-3D83-4946-B3C1-69629CC974E8} = {609634B8-A9B9-4DFD-A2CF-6148AA080BF6}
+		{6DC84E1B-3E9B-4270-8A81-DFB4C816D331} = {B758FB1C-FDB0-4B4E-91A7-520CF812B07D}
+		{964704E5-EEAA-4AE5-852A-96B772864FF8} = {6DC84E1B-3E9B-4270-8A81-DFB4C816D331}
+		{2D05B35C-6086-496C-B998-C7081A0846D7} = {964704E5-EEAA-4AE5-852A-96B772864FF8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AEAF6784-0B8B-4B0B-839A-7E83A4F734E5}

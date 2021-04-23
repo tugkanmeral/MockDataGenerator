@@ -1,4 +1,5 @@
-﻿using Services.PersonGenerator.Interfaces;
+﻿using Services.PersonGenerator.Datas.Seeds;
+using Services.PersonGenerator.Interfaces;
 using Services.PersonGenerator.Models;
 using System;
 using System.Collections.Generic;
@@ -20,12 +21,14 @@ namespace Services.PersonGenerator.Business
         public IMockData GetMockData()
         {
             var age = _random.Next(MAX_AGE);
+            var nameIndex = _random.Next(1, 5);
+            var surnameIndex = _random.Next(1, 5);
 
             var person = new Person()
             {
                 BirthDate = DateTime.Now.AddYears(-age),
-                Name = "Tuğkan",
-                Surname = "Meral"
+                Name = NameSeeds.Names[nameIndex],
+                Surname = SurnameSeeds.Surnames[surnameIndex]
             };
             return person;
         }

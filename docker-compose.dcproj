@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>42d19f1d-e314-4eb5-a60b-55dede88e6fa</ProjectGuid>
+    <ProjectGuid>60e01fd6-5306-4c02-9a7b-2b012cfe5cb2</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>services.persongenerator</DockerServiceName>
