@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Logger.MongoLogger
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{01488A47-B79F-497A-A9F1-00E679173DDF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", "{DE34E131-D98F-43CA-84D3-06895E84EC54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway.Ocelot", "ApiGateway.Ocelot\ApiGateway.Ocelot.csproj", "{F863E297-AFA5-4E04-A6CC-EE010B879EF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,10 @@ Global
 		{2D05B35C-6086-496C-B998-C7081A0846D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D05B35C-6086-496C-B998-C7081A0846D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D05B35C-6086-496C-B998-C7081A0846D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F863E297-AFA5-4E04-A6CC-EE010B879EF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F863E297-AFA5-4E04-A6CC-EE010B879EF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F863E297-AFA5-4E04-A6CC-EE010B879EF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F863E297-AFA5-4E04-A6CC-EE010B879EF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +50,7 @@ Global
 		{964704E5-EEAA-4AE5-852A-96B772864FF8} = {6DC84E1B-3E9B-4270-8A81-DFB4C816D331}
 		{2D05B35C-6086-496C-B998-C7081A0846D7} = {964704E5-EEAA-4AE5-852A-96B772864FF8}
 		{01488A47-B79F-497A-A9F1-00E679173DDF} = {B758FB1C-FDB0-4B4E-91A7-520CF812B07D}
+		{F863E297-AFA5-4E04-A6CC-EE010B879EF9} = {DE34E131-D98F-43CA-84D3-06895E84EC54}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AEAF6784-0B8B-4B0B-839A-7E83A4F734E5}
