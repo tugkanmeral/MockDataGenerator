@@ -68,6 +68,7 @@ namespace Services.PersonGenerator
 
                 return new DefaultRabbitMQPersistentConnection(factory, logger, retryCount);
             });
+
             services.AddSingleton<LogBusProducer>();
         }
 

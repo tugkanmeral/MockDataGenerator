@@ -18,32 +18,32 @@ namespace Common.EventBus.RabbitMQBus.Producer.Log
 {
     public class LogBusProducer
     {
-        private readonly IRabbitMQPersistentConnection persistentConnection;
-        private readonly ILogger<LogBusProducer> logger;
-        private readonly int retryCount;
+        private readonly IRabbitMQPersistentConnection _persistentConnection;
+        private readonly ILogger<LogBusProducer> _logger;
+        private readonly int _retryCount;
 
         public LogBusProducer(IRabbitMQPersistentConnection rabbitMQPersistentConnection, ILogger<LogBusProducer> logger, int retryCount = 5)
         {
-            this.persistentConnection = rabbitMQPersistentConnection;
-            this.logger = logger;
-            this.retryCount = retryCount;
+            _persistentConnection = rabbitMQPersistentConnection;
+            _logger = logger;
+            _retryCount = retryCount;
         }
 
         public void Publish(string queueName, EventBase @event)
         {
-            if (!persistentConnection.IsConnected)
-                persistentConnection.TryConnect();
+            if (!_persistentConnection.IsConnected)
+                _persistentConnection.TryConnect();
 
             var policy = RetryPolicy.Handle<SocketException>()
                 .Or<BrokerUnreachableException>()
-                .WaitAndRetry(retryCount, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)),
+                .WaitAndRetry(_retryCount, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)),
                     (ex, time) =>
                     {
-                        logger.LogWarning(ex, "RabbitMQ Client could not connect after {TimeOut}s ({ExceptionMessage})", $"{time.TotalSeconds:n1}", ex.Message);
+                        _logger.LogWarning(ex, "RabbitMQ Client could not connect after {TimeOut}s ({ExceptionMessage})", $"{time.TotalSeconds:n1}", ex.Message);
                     }
                 );
 
-            using var channel = persistentConnection.CreateModel();
+            using var channel = _persistentConnection.CreateModel();
             /*
             durable =>      if setted false then queue will be held in in-memory. 
                             if setted true then queue will be held in physical memory and do not be gone when host is restarted
