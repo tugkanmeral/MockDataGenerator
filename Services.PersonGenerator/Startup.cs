@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using RabbitMQ.Client;
+using Common.EventBus.RabbitMQBus.Producer.Log;
 
 namespace Services.PersonGenerator
 {
@@ -67,6 +68,7 @@ namespace Services.PersonGenerator
 
                 return new DefaultRabbitMQPersistentConnection(factory, logger, retryCount);
             });
+            services.AddSingleton<LogBusProducer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
