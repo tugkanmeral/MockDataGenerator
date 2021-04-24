@@ -9,4 +9,8 @@
     <PackageReference Include="MongoDB.Driver" Version="2.12.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Common.EventBus.RabbitMQBus\Common.EventBus.RabbitMQBus.csproj" />
+  </ItemGroup>
+
 </Project>

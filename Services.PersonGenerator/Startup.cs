@@ -1,3 +1,5 @@
+using Common.EventBus.RabbitMQBus.Core;
+using Common.EventBus.RabbitMQBus;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -13,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using RabbitMQ.Client;
 
 namespace Services.PersonGenerator
 {
@@ -36,6 +39,34 @@ namespace Services.PersonGenerator
             });
 
             services.AddSingleton<IMockDataGenerator, MockPersonGenerator>();
+
+            services.AddSingleton<IRabbitMQPersistentConnection>(sp =>
+            {
+                var logger = sp.GetRequiredService<ILogger<DefaultRabbitMQPersistentConnection>>();
+
+                var factory = new ConnectionFactory()
+                {
+                    HostName = Configuration["EventBus:HostName"]
+                };
+
+                if (!string.IsNullOrWhiteSpace(Configuration["EventBus:UserName"]))
+                {
+                    factory.UserName = Configuration["EventBus:UserName"];
+                }
+
+                if (!string.IsNullOrWhiteSpace(Configuration["EventBus:Password"]))
+                {
+                    factory.UserName = Configuration["EventBus:Password"];
+                }
+
+                var retryCount = 5;
+                if (!string.IsNullOrWhiteSpace(Configuration["EventBus:RetryCount"]))
+                {
+                    retryCount = int.Parse(Configuration["EventBus:RetryCount"]);
+                }
+
+                return new DefaultRabbitMQPersistentConnection(factory, logger, retryCount);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
