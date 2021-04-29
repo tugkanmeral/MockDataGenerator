@@ -39,7 +39,7 @@ namespace Services.PersonGenerator
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Services.PersonGenerator", Version = "v1" });
             });
 
-            services.AddSingleton<IMockDataGenerator, MockPersonGenerator>();
+            services.AddScoped<IMockDataGenerator, MockPersonGenerator>();
 
             services.AddSingleton<IRabbitMQPersistentConnection>(sp =>
             {
