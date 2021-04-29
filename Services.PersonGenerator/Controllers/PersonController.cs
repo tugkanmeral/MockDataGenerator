@@ -2,7 +2,7 @@
 using Common.EventBus.RabbitMQBus.Events.Log;
 using Common.EventBus.RabbitMQBus.Producer.Log;
 using Microsoft.AspNetCore.Mvc;
-using Services.PersonGenerator.Interfaces;
+using Services.Common.ServiceBase.MockDataGenerator;
 using Services.PersonGenerator.Models;
 using System;
 using System.Collections.Generic;

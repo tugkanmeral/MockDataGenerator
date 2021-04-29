@@ -10,13 +10,13 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Services.PersonGenerator.Business;
-using Services.PersonGenerator.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using RabbitMQ.Client;
 using Common.EventBus.RabbitMQBus.Producer.Log;
+using Services.Common.ServiceBase.MockDataGenerator;
 
 namespace Services.PersonGenerator
 {

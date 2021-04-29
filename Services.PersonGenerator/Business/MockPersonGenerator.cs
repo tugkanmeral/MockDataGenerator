@@ -1,5 +1,5 @@
-﻿using Services.PersonGenerator.Datas.Seeds;
-using Services.PersonGenerator.Interfaces;
+﻿using Services.Common.ServiceBase.MockDataGenerator;
+using Services.PersonGenerator.Datas.Seeds;
 using Services.PersonGenerator.Models;
 using System;
 using System.Collections.Generic;

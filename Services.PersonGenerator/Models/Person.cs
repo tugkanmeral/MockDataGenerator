@@ -1,4 +1,4 @@
-﻿using Services.PersonGenerator.Interfaces;
+﻿using Services.Common.ServiceBase.MockDataGenerator;
 using System;
 
 namespace Services.PersonGenerator.Models

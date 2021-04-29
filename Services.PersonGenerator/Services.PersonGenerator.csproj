@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Common.EventBus.RabbitMQBus\Common.EventBus.RabbitMQBus.csproj" />
+    <ProjectReference Include="..\Services.Common.ServiceBase.MockDataGenerator\Services.Common.ServiceBase.MockDataGenerator.csproj" />
   </ItemGroup>
 
 </Project>

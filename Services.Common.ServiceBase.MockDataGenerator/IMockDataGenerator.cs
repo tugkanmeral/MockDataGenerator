@@ -1,7 +1,8 @@
-﻿using Services.PersonGenerator.Models;
+﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace Services.PersonGenerator.Interfaces
+namespace Services.Common.ServiceBase.MockDataGenerator
 {
     public interface IMockDataGenerator
     {
