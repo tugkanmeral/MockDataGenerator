@@ -9,11 +9,19 @@ namespace Services.PersonGenerator.Datas.Seeds
     {
         public static Dictionary<int, string> Names = new Dictionary<int, string>
         {
-            {1, "Zeynep" },
-            {2, "Mehmet" },
-            {3, "Esra" },
-            {4, "Emine" },
-            {5, "Engin" }
+            {0, "Esra" },
+            {1, "Tuğkan" },
+            {2, "Emine" },
+            {3, "Engin" },
+            {4, "Büşra" },
+            {5, "Muharrem" },
+            {6, "Kaya" },
+            {7, "Diana" },
+            {8, "Andre" },
+            {9, "Pelin" },
+            {10, "Sasun" },
+            {11, "Aras" },
+            {12, "Tara" }
         };
     }
 }
