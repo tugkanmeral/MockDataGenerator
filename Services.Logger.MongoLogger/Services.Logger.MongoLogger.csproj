@@ -6,11 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
-    <PackageReference Include="MongoDB.Driver" Version="2.12.2" />
+    <PackageReference Include="MongoDB.Driver" Version="2.12.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Common.EventBus.RabbitMQBus\Common.EventBus.RabbitMQBus.csproj" />
+    <ProjectReference Include="..\Services.Common.Core.MongoDB\Services.Common.Core.MongoDB.csproj" />
   </ItemGroup>
 
 </Project>

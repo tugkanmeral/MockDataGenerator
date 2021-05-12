@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 using RabbitMQ.Client;
+using Services.Common.Core.MongoDB;
 using Services.Logger.MongoLogger.EventBusConsumers;
 using Services.Logger.MongoLogger.Extensions;
 using Services.Logger.MongoLogger.Repositories;
@@ -31,7 +32,6 @@ namespace Services.Logger.MongoLogger
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
 
             services.AddSingleton<IMongoClient, MongoClient>(s =>
@@ -39,7 +39,7 @@ namespace Services.Logger.MongoLogger
                 var uri = s.GetRequiredService<IConfiguration>()["MongoUri"];
                 return new MongoClient(uri);
             });
-            services.AddSingleton<LogRepository>();
+            services.AddSingleton<ILogRepository, LogRepository>();
 
             services.AddSingleton<IRabbitMQPersistentConnection>(sp =>
             {

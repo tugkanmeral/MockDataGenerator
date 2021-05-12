@@ -3,6 +3,7 @@ using Common.EventBus.RabbitMQBus.Events.Log;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using Services.Logger.MongoLogger.Entities;
 using Services.Logger.MongoLogger.Repositories;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,9 @@ namespace Services.Logger.MongoLogger.EventBusConsumers
     public class LogQueueConsumer
     {
         private readonly IRabbitMQPersistentConnection _connection;
-        private LogRepository _logRepository;
+        private ILogRepository _logRepository;
 
-        public LogQueueConsumer(IRabbitMQPersistentConnection connection, LogRepository logRepository)
+        public LogQueueConsumer(IRabbitMQPersistentConnection connection, ILogRepository logRepository) //, LogRepository logRepository
         {
             _connection = connection;
             _logRepository = logRepository;
@@ -47,7 +48,9 @@ namespace Services.Logger.MongoLogger.EventBusConsumers
 
             if (e.RoutingKey == QueueNames.LOG_QUEUE)
             {
-                _logRepository.Insert(@event.Message);   
+                Log log = new();
+                log.Message = @event.Message;
+                _logRepository.InsertOneAsync(log);   
             }
         }
 

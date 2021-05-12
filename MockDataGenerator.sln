@@ -27,11 +27,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.EventBus.RabbitMQBus
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceBase", "ServiceBase", "{FDDBFB13-EC12-4B13-BCBC-745FAC68AF1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Common.ServiceBase.MockDataGenerator", "Services.Common.ServiceBase.MockDataGenerator\Services.Common.ServiceBase.MockDataGenerator.csproj", "{CE9E00CC-C667-4C32-93B7-B48A04A1BAA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.Common.ServiceBase.MockDataGenerator", "Services.Common.ServiceBase.MockDataGenerator\Services.Common.ServiceBase.MockDataGenerator.csproj", "{CE9E00CC-C667-4C32-93B7-B48A04A1BAA3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NumberGenerator", "NumberGenerator", "{8945B05F-86EA-4132-AAF7-CEA8218B5889}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.NumberGenerator", "Services.NumberGenerator\Services.NumberGenerator.csproj", "{E950B5F0-03E0-422B-AECF-94F38F1A310F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services.NumberGenerator", "Services.NumberGenerator\Services.NumberGenerator.csproj", "{E950B5F0-03E0-422B-AECF-94F38F1A310F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F470ACB2-10B1-48CE-8D0D-E2F3CCEF337D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Common.Core.MongoDB", "Services.Common.Core.MongoDB\Services.Common.Core.MongoDB.csproj", "{BEF017B6-3B29-4E96-A72B-27355C0765EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +67,10 @@ Global
 		{E950B5F0-03E0-422B-AECF-94F38F1A310F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E950B5F0-03E0-422B-AECF-94F38F1A310F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E950B5F0-03E0-422B-AECF-94F38F1A310F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEF017B6-3B29-4E96-A72B-27355C0765EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEF017B6-3B29-4E96-A72B-27355C0765EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEF017B6-3B29-4E96-A72B-27355C0765EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEF017B6-3B29-4E96-A72B-27355C0765EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +89,8 @@ Global
 		{CE9E00CC-C667-4C32-93B7-B48A04A1BAA3} = {FDDBFB13-EC12-4B13-BCBC-745FAC68AF1E}
 		{8945B05F-86EA-4132-AAF7-CEA8218B5889} = {B758FB1C-FDB0-4B4E-91A7-520CF812B07D}
 		{E950B5F0-03E0-422B-AECF-94F38F1A310F} = {8945B05F-86EA-4132-AAF7-CEA8218B5889}
+		{F470ACB2-10B1-48CE-8D0D-E2F3CCEF337D} = {01488A47-B79F-497A-A9F1-00E679173DDF}
+		{BEF017B6-3B29-4E96-A72B-27355C0765EA} = {F470ACB2-10B1-48CE-8D0D-E2F3CCEF337D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AEAF6784-0B8B-4B0B-839A-7E83A4F734E5}

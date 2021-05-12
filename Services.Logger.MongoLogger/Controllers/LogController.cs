@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver;
+using Services.Logger.MongoLogger.Entities;
 using Services.Logger.MongoLogger.Repositories;
 using System;
 using System.Collections.Generic;
@@ -12,8 +14,8 @@ namespace Services.Logger.MongoLogger.Controllers
     [ApiController]
     public class LogController : ControllerBase
     {
-        private LogRepository _logRepository;
-        public LogController(LogRepository logRepository)
+        private ILogRepository _logRepository;
+        public LogController(ILogRepository logRepository) //LogRepository logRepository
         {
             _logRepository = logRepository;
         }
@@ -21,9 +23,14 @@ namespace Services.Logger.MongoLogger.Controllers
         [HttpGet]
         public async Task<string> Insert(string message)
         {
-            _logRepository.Insert(message);
-            var addedMessage = await _logRepository.Get(message);
-            return addedMessage;
+            Log log = new();
+            log.Message = message;
+            _logRepository.InsertOneAsync(log);
+
+            var sortFilter = Builders<Log>.Sort.Descending(l => l._id);
+            var lastAddedMessage = await _logRepository.Collection.Find(Builders<Log>.Filter.Empty).Sort(sortFilter).Limit(1).FirstOrDefaultAsync();
+
+            return $"{lastAddedMessage._id} {lastAddedMessage.Message}";
         }
     }
 }
