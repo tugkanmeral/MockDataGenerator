@@ -43,13 +43,5 @@ namespace Services.Common.Core.MongoDB
         void DeleteManyAsync(Expression<Func<TDocument, bool>> filterExpression);
 
         void DeleteMany(Expression<Func<TDocument, bool>> filterExpression);
-        //void Insert(TDocument document);
-        //void InsertAsync(TDocument document);
-        //TDocument Get(Expression<Func<TDocument, bool>> filterExpression);
-        //Task<TDocument> GetAsync(Expression<Func<TDocument, bool>> filterExpression);
-        //void Update(Expression<Func<TDocument, bool>> filterExpression, TDocument document);
-        //void UpdateAsync(Expression<Func<TDocument, bool>> filterExpression, TDocument document);
-        //void Delete(Expression<Func<TDocument, bool>> filterExpression);
-        //void DeleteAsync(Expression<Func<TDocument, bool>> filterExpression);
     }
 }
